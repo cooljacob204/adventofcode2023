@@ -50,17 +50,10 @@ fn part_2(){
   for line in input {
     let first = re_first.captures(line.as_str()).unwrap().get(1);
     let last = re_last.captures(line.as_str()).unwrap().get(1);
-    
 
-    if first.is_some() && last.is_some() {
-      let first_num = string_to_num(first.unwrap().as_str());
-      let last_num = string_to_num(last.unwrap().as_str());
-      sum += first_num * 10 + last_num;
-    } else if first.is_some() {
-      let first_num = string_to_num(first.unwrap().as_str());
-      println!("{}", line);
-      sum += first_num * 10 + first_num;
-    }
+    let first_num = string_to_num(first.unwrap().as_str());
+    let last_num = string_to_num(last.unwrap().as_str());
+    sum += first_num * 10 + last_num;
   }
 
   println!("Day 1, part 2: {}", sum);
