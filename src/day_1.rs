@@ -25,16 +25,12 @@ fn part_1() {
 
       if first_num.is_none() {
         first_num = Some(num);
-      } else {
-        last_num = Some(num);
       }
+
+      last_num = Some(num);
     }
 
-    if first_num.is_some() && last_num.is_some() {
-      sum += (first_num.unwrap() * 10) + last_num.unwrap();
-    } else if first_num.is_some() {
-      sum += first_num.unwrap() * 10 + first_num.unwrap();
-    }
+    sum += (first_num.unwrap() * 10) + last_num.unwrap();
   }
 
   println!("Day 1, part 1: {}", sum);
